@@ -6,6 +6,7 @@ LABEL maintainer="hola@decidim.org"
 WORKDIR /code
 
 RUN decidim . --queue sidekiq
+RUN sed -i 's/config.force_ssl = true/config.force_ssl = false/' config/environments/production.rb
 RUN bundle check || bundle install
 RUN bundle exec rake assets:precompile
 
