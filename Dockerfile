@@ -1,4 +1,4 @@
-ARG base_image=ghcr.io/decidim/decidim-generator:latest
+ARG base_image=ghcr.io/decidim/decidim-generator:0.31.4
 
 FROM $base_image
 LABEL maintainer="hola@decidim.org"
