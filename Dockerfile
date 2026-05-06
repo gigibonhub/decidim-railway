@@ -5,7 +5,7 @@ LABEL maintainer="hola@decidim.org"
 
 WORKDIR /code
 
-RUN decidim --queue sidekiq .
+RUN decidim . --queue sidekiq
 RUN bundle check || bundle install
 RUN bundle exec rake assets:precompile
 
