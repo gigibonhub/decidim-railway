@@ -3,6 +3,8 @@ ARG base_image=ghcr.io/decidim/decidim-generator:latest
 FROM $base_image
 LABEL maintainer="hola@decidim.org"
 
+WORKDIR /code
+
 RUN decidim --queue sidekiq .
 RUN bundle check || bundle install
 RUN bundle exec rake assets:precompile
