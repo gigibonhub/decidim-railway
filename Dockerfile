@@ -4,6 +4,7 @@ FROM $base_image
 LABEL maintainer="hola@decidim.org"
 
 WORKDIR /code
+
 COPY clean.dump /code/clean.dump
 
 RUN decidim . --queue sidekiq
